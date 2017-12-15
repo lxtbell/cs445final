@@ -42,9 +42,20 @@
           </div>
         </div>
         <div class="panel-body">
-          <h4>Inspiration</h4>
+          <h4>Motivation</h4>
           <p>
-            GoPro...
+            Since the first introduction of smartphones to the world, integrated mobile digital cameras have gained wide popularity. 
+			Photography is more accessible than usual thanks to mobile digital cameras' advantage in compactness over many professional digital cameras. 
+			However, due to their limitation in physical size, mobile digital cameras often delivers inferior performance 
+			in image capturing compared to professional digital cameras that are larger in size. Compared to the high quality images captured by professional digital cameras, 
+			images captured by mobile digital cameras suffers from information loss. We believe that there three major causes to this:
+			(1) Limited dynamic range (2) Smaller sensors are more sensitive to electronic circuit noises (3) Diffusion blur from smaller aperture 
+			<br>
+          </p>
+		  <p>
+			Here we provide two example images we captured under similar conditions using a full-frame mirrorless camera and a compact form-factor camera. 
+			We can see that the dynamic range of the first image is clearly higher than the second image. Also, sharpness of the first image from visual perception is higher than 
+			the second image. If we look a little closer, the light on the ceiling causes significant diffusion blur in the second image.
           </p>
           <div class="row exif">
             <img src="img/a7r2.jpg" class="col-xs-12" title="Camera: SONY ILCE-7RM2<br>Lens: Sony FE 12-24mm f4 G<br>Aperture: f/8<br>Shutter speed: 1/8 s<br>ISO: 100" />
@@ -52,13 +63,27 @@
           <div class="row exif">
             <img src="img/gopro.jpg" class="col-xs-12" title="Camera: GoPro HERO4 Silver<br>Aperture: f/2.8<br>Shutter speed: 1/30 s<br>ISO: 110" />
           </div>
+		  <p>
+			<br>
+			 In this project, we investigate each of the three causes and attempt to use neural method to recover low quality images that suffers from each type of information loss. 
+          </p>
 
           <hr>
           <h4>Tools Utilized</h4>
           <p>
-            pix2pix...
+            For this project, we use the pix2pix system proposed in <a href="https://arxiv.org/abs/1611.07004">Image-to-Image Translation with Conditional Adversarial Networks</a> 
+			for translation bewteen a low quality image to its high quality variant. All images we used for training and validation purposes are captured by either Xiaotian or Sihao. 
+			No external dataset or image were involved during our experiments. 
           </p>
-
+		  <p>
+		  Pictures used in this web page, if not referenced or indicated, also belongs to either Xiaotian or Sihao.
+		  </p>
+		  <p>
+		  We developed our code for dataset preparation in MatLab. No external libraries were used during the process.  
+		  </p>
+		  <p>
+			We use the existing <a href="https://github.com/affinelayer/pix2pix-tensorflow">pix2pix-tensorflow</a> implementation of pix2pix in TensorFlow available on GitHub.
+		  </p>
           <hr>
           <h4>Source Images</h4>
           <p>
