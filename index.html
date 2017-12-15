@@ -12,6 +12,9 @@
   <script src="js/jquery.event.move.js"></script>
   <script src="js/jquery.twentytwenty.js"></script>
   <script src="js/jquery.sliphover.min.js"></script>
+  <script type="text/javascript" async
+          src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
 </head>
 
 <body>
@@ -75,13 +78,59 @@
           </div>
         </div>
         <div class="panel-body">
+          <p>
+            We first attempt to train a model to convert low DR camera images into higher DR camera images.
+            To achieve that the model must not only learn the new tone curve,
+            but also learn to fill the missing shadow and highlight details based on the low DR image and its own knowledge.
+            After prolonged training and trials, we have a model performing fairly well at this task.
+          </p>
+
+          <hr>
           <h4>Dataset Generation</h4>
           <p>
-            ...
+            To get pairs of images with one from a high DR camera and another from a low DR camera,
+            we attempt to convert images originally from the high DR camera (input images) to simulate the shots from the low DR one (output images).
+            We noticed that camera response functions incorporates characteristics of the camera's DR,
+            as cameras with lower DR will have a narrower function domain to hide highlight clipping and shadow noise.
+            Meanwhile, irradiance values, ignoring highlight clipping and shadow noise, should be the same for both cameras.
+            Therefore, it is natural to apply the inverse high DR camera response function to the input image to find the irradiance values,
+            and then the low DR camera response function to get the output image.<br>
+            $$Z_{low} = c(Z_{high}) = g_{low}^{-1}(g_{high}(Z_{high}))$$
+            We use the method in Project 4 to find the inverse camera response functions \(g\).
+          </p>
+
+          <p>
+            Here are the estimated inverse response functions for Sony a7R II and GoPro HERO4.<br>
+            Note that the one of a7R II has a much larger range.
           </p>
           <div class="img-compare">
             <img src="img/gopro_response.svg" width="100%" />
             <img src="img/a7r2_response.svg" width="100%" />
+          </div>
+
+          <br>
+          <p>
+            We then use <code>pchip</code> interpolation on \(g_{low}\),
+            and <code>fzero</code> on it to find its inverse function values.<br>
+            Note that \(z_{low}\) clips to 0 or 255 for extreme \(z_{high}\) values,
+            indicating that the low DR camera image loses information.
+          </p>
+          <div class="row">
+            <img src="img/conversion.svg" class="col-xs-12" />
+          </div>
+
+          <br>
+          <p>
+            We apply \(c\) to the source images to get the image pairs for training.<br>
+          </p>
+
+          <p>
+            Here is an example training image,
+            with the high DR image on the left and the low DR image on the right.<br>
+            Note that grass field falls to black and some part of the sky clips to pure white.
+          </p>
+          <div class="row">
+            <img src="img/hdr_training.jpg" class="col-xs-12" />
           </div>
 
           <hr>
