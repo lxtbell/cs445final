@@ -109,13 +109,14 @@
           <p>
             To simulate the electronic circuit noise of images captured under high ISO settings, we first generate a zero-mean Gaussian white noise image with fixed 
 			variance at every pixel. To mimic the process of demosaicing interpolation of bayer filter, we designed 
-			the filter shown in the figure below based on the observation that the value at a given pixel is most correlated 
+			the filter shown in the figure below based on the observation that the value of a given pixel is most correlated 
 			with (1) itself; (2) its four adjacent pixels. 
           </p>
           <div class="row">
 			<img src="img/bayer.png" class="col-md-6 col-xs-12" />
             <img src="img/noise_sim_filter.png" class="col-md-4 col-xs-12" />
           </div>
+		  <em>Anon. 2017. Bayer filter. (November 2017). Retrieved December 14, 2017 from <a href="https://en.wikipedia.org/wiki/Bayer_filter">https://en.wikipedia.org/wiki/Bayer_filter</a></em>
 		  <p>
 			<br>
 		    We apply this filter to the noise image we generated and add the result to the original image to obtain our simulated noisy image. 
