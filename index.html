@@ -377,14 +377,59 @@
           <hr>
           <h4>Training</h4>
           <p>
-            ...
+            We obtain the most satisfactory results after 120 epochs of training.
           </p>
 
           <hr>
-          <h4>Results</h4>
-          <p>
-            ...
-          </p>
+          <h4>Validation Set Results</h4>
+          <div class="row">
+            <div class="col-md-6 col-xs-12">
+              <div class="img-compare input-output">
+                <img src="img/deblur_results/48-inputs.png" width="100%" />
+                <img src="img/deblur_results/48-outputs.png" width="100%" />
+              </div>
+            </div>
+            <div class="col-md-6 col-xs-12">
+              <div class="img-compare output-target">
+                <img src="img/deblur_results/48-outputs.png" width="100%" />
+                <img src="img/deblur_results/48-targets.png" width="100%" />
+              </div>
+            </div>
+          </div>
+
+          <br>
+          <br>
+          <div class="row">
+            <div class="col-md-6 col-xs-12">
+              <div class="img-compare input-output">
+                <img src="img/deblur_results/78-inputs.png" width="100%" />
+                <img src="img/deblur_results/78-outputs.png" width="100%" />
+              </div>
+            </div>
+            <div class="col-md-6 col-xs-12">
+              <div class="img-compare output-target">
+                <img src="img/deblur_results/78-outputs.png" width="100%" />
+                <img src="img/deblur_results/78-targets.png" width="100%" />
+              </div>
+            </div>
+          </div>
+
+          <br>
+          <br>
+          <div class="row">
+            <div class="col-md-6 col-xs-12">
+              <div class="img-compare input-output">
+                <img src="img/deblur_results/84-inputs.png" width="100%" />
+                <img src="img/deblur_results/84-outputs.png" width="100%" />
+              </div>
+            </div>
+            <div class="col-md-6 col-xs-12">
+              <div class="img-compare output-target">
+                <img src="img/deblur_results/84-outputs.png" width="100%" />
+                <img src="img/deblur_results/84-targets.png" width="100%" />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -403,6 +448,16 @@
         });
         $(".img-compare.epoch-100-target").twentytwenty({
             before_label: '100 Epochs',
+            after_label: 'Target Image',
+            default_offset_pct: 0.65
+        });
+        $(".img-compare.input-output").twentytwenty({
+            before_label: 'Input Image',
+            after_label: 'Output Image',
+            default_offset_pct: 0.35
+        });
+        $(".img-compare.output-target").twentytwenty({
+            before_label: 'Output Image',
             after_label: 'Target Image',
             default_offset_pct: 0.65
         });
