@@ -130,20 +130,147 @@
             Note that grass field falls to black and some part of the sky clips to pure white.
           </p>
           <div class="row">
-            <img src="img/hdr_training.jpg" class="col-xs-12" />
+            <img src="img/hdr_dataset_example.jpg" class="col-xs-12" />
           </div>
 
           <hr>
           <h4>Training</h4>
           <p>
-            ...
+            We use TensorBoard to monitor training statistics.
+            We run the model on the validation set to manually inspect the results for every 20 epochs.
           </p>
 
           <hr>
-          <h4>Results</h4>
+          <h4>Validation Set Results</h4>
           <p>
-            ...
+            After 20 epochs, the model learns a tone curve to adjust to the target images.<br>
+            After 100 epochs, it successfully learns to fill the missing details, with many natural details.
           </p>
+
+          <p>
+            Here are some example validation set results.
+          </p>
+
+          <br>
+          <br>
+          <p>
+            The 100-epoch model manages to fill clouds into the sky highlights.
+            Though some of the clouds are not there in the target image,
+            they certainly make sense.
+            It also fills texture details into the vast areas of shadows.
+          </p>
+          <div class="row exif">
+            <img src="img/hdr_results/66-inputs.png" class="col-md-6 col-xs-12" title="Input Low DR Image" />
+            <img src="img/hdr_results/66-targets.png" class="col-md-6 col-xs-12" title="Target High DR Image" />
+          </div>
+          <div class="row exif">
+            <img src="img/hdr_results/66-outputs_20.png" class="col-md-6 col-xs-12" title="Model After 20 Epochs" />
+            <img src="img/hdr_results/66-outputs_100.png" class="col-md-6 col-xs-12" title="Model After 100 Epochs" />
+          </div>
+          <div class="row">
+            <div class="col-md-6 col-xs-12">
+              <div class="img-compare input-epoch-100">
+                <img src="img/hdr_results/66-inputs.png" width="100%" />
+                <img src="img/hdr_results/66-outputs_100.png" width="100%" />
+              </div>
+            </div>
+            <div class="col-md-6 col-xs-12">
+              <div class="img-compare epoch-100-target">
+                <img src="img/hdr_results/66-outputs_100.png" width="100%" />
+                <img src="img/hdr_results/66-targets.png" width="100%" />
+              </div>
+            </div>
+          </div>
+
+          <br>
+          <br>
+          <p>
+            The 100-epoch model manages to fill tree textures into the tree shadows.
+            It also fills some imaginary clouds into the sky highlights,
+            which could have been there,
+            while the 20-epoch model doesn't.
+          </p>
+          <div class="row exif">
+            <img src="img/hdr_results/144-inputs.png" class="col-md-6 col-xs-12" title="Input Low DR Image" />
+            <img src="img/hdr_results/144-targets.png" class="col-md-6 col-xs-12" title="Target High DR Image" />
+          </div>
+          <div class="row exif">
+            <img src="img/hdr_results/144-outputs_20.png" class="col-md-6 col-xs-12" title="Model After 20 Epochs" />
+            <img src="img/hdr_results/144-outputs_100.png" class="col-md-6 col-xs-12" title="Model After 100 Epochs" />
+          </div>
+          <div class="row">
+            <div class="col-md-6 col-xs-12">
+              <div class="img-compare input-epoch-100">
+                <img src="img/hdr_results/144-inputs.png" width="100%" />
+                <img src="img/hdr_results/144-outputs_100.png" width="100%" />
+              </div>
+            </div>
+            <div class="col-md-6 col-xs-12">
+              <div class="img-compare epoch-100-target">
+                <img src="img/hdr_results/144-outputs_100.png" width="100%" />
+                <img src="img/hdr_results/144-targets.png" width="100%" />
+              </div>
+            </div>
+          </div>
+
+          <br>
+          <br>
+          <p>
+            The 100-epoch model learns to reduce the intensity of the pure white sun highlight,
+            which the 20-epoch model fails.
+            It also fills mountain and grass details into the shadows.
+          </p>
+          <div class="row exif">
+            <img src="img/hdr_results/174-inputs.png" class="col-md-6 col-xs-12" title="Input Low DR Image" />
+            <img src="img/hdr_results/174-targets.png" class="col-md-6 col-xs-12" title="Target High DR Image" />
+          </div>
+          <div class="row exif">
+            <img src="img/hdr_results/174-outputs_20.png" class="col-md-6 col-xs-12" title="Model After 20 Epochs" />
+            <img src="img/hdr_results/174-outputs_100.png" class="col-md-6 col-xs-12" title="Model After 100 Epochs" />
+          </div>
+          <div class="row">
+            <div class="col-md-6 col-xs-12">
+              <div class="img-compare input-epoch-100">
+                <img src="img/hdr_results/174-inputs.png" width="100%" />
+                <img src="img/hdr_results/174-outputs_100.png" width="100%" />
+              </div>
+            </div>
+            <div class="col-md-6 col-xs-12">
+              <div class="img-compare epoch-100-target">
+                <img src="img/hdr_results/174-outputs_100.png" width="100%" />
+                <img src="img/hdr_results/174-targets.png" width="100%" />
+              </div>
+            </div>
+          </div>
+
+          <br>
+          <br>
+          <p>
+            The 100-epoch model manages to fill stone-like textures into the mountain and ground shadows.
+            Though some of the textures might not be present in the target image, they look natural.
+          </p>
+          <div class="row exif">
+            <img src="img/hdr_results/60-inputs.png" class="col-md-6 col-xs-12" title="Input Low DR Image" />
+            <img src="img/hdr_results/60-targets.png" class="col-md-6 col-xs-12" title="Target High DR Image" />
+          </div>
+          <div class="row exif">
+            <img src="img/hdr_results/60-outputs_20.png" class="col-md-6 col-xs-12" title="Model After 20 Epochs" />
+            <img src="img/hdr_results/60-outputs_100.png" class="col-md-6 col-xs-12" title="Model After 100 Epochs" />
+          </div>
+          <div class="row">
+            <div class="col-md-6 col-xs-12">
+              <div class="img-compare input-epoch-100">
+                <img src="img/hdr_results/60-inputs.png" width="100%" />
+                <img src="img/hdr_results/60-outputs_100.png" width="100%" />
+              </div>
+            </div>
+            <div class="col-md-6 col-xs-12">
+              <div class="img-compare epoch-100-target">
+                <img src="img/hdr_results/60-outputs_100.png" width="100%" />
+                <img src="img/hdr_results/60-targets.png" width="100%" />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -229,7 +356,19 @@
 
 <script>
     $(window).on('load', function() {
-        $(".img-compare").twentytwenty({default_offset_pct: 0.12});
+        $(".img-compare").twentytwenty({
+            default_offset_pct: 0.35
+        });
+        $(".img-compare.input-epoch-100").twentytwenty({
+            before_label: 'Input Image',
+            after_label: '100 Epochs',
+            default_offset_pct: 0.35
+        });
+        $(".img-compare.epoch-100-target").twentytwenty({
+            before_label: '100 Epochs',
+            after_label: 'Target Image',
+            default_offset_pct: 0.65
+        });
         $(".exif").sliphover({
             backgroundColor: 'rgba(0,0,0,0)',
             height: '50%'
