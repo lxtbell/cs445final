@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CS 445 Final Project</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/flatly/bootstrap.min.css">
+  <link rel="stylesheet" href="css/twentytwenty.css" />
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="js/jquery.event.move.js"></script>
+  <script src="js/jquery.twentytwenty.js"></script>
+  <script src="js/jquery.sliphover.min.js"></script>
+</head>
+
+<body>
+<div class="container">
+  <div class="page-header" id="banner">
+    <div class="row">
+      <div class="col-sm-7 col-sm-offset-1 col-xs-12">
+        <h1>CS 445 Final Project</h1>
+        <p class="lead">Xiaotian Le (xle2) & Sihao Chen (schen149)</p>
+      </div>
+      <div class="col-sm-3 col-xs-12">
+        <a href="thumbnail.jpg" target="_blank">
+          <img src="thumbnail.jpg" class="col-xs-12" />
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-10 col-sm-offset-1 col-xs-12">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <div class="panel-title">
+            <h3>Introduction</h3>
+          </div>
+        </div>
+        <div class="panel-body">
+          <h4>Inspiration</h4>
+          <p>
+            GoPro...
+          </p>
+          <div class="row exif">
+            <img src="img/a7r2.jpg" class="col-xs-12" title="Camera: SONY ILCE-7RM2<br>Lens: Sony FE 12-24mm f4 G<br>Aperture: f/8<br>Shutter speed: 1/8 s<br>ISO: 100" />
+          </div>
+          <div class="row exif">
+            <img src="img/gopro.jpg" class="col-xs-12" title="Camera: GoPro HERO4 Silver<br>Aperture: f/2.8<br>Shutter speed: 1/30 s<br>ISO: 110" />
+          </div>
+
+          <hr>
+          <h4>Tools Utilized</h4>
+          <p>
+            pix2pix...
+          </p>
+
+          <hr>
+          <h4>Source Images</h4>
+          <p>
+            A7 images...
+          </p>
+          <div class="row">
+            <img src="img/a7_1.jpg" class="col-md-6 col-xs-12" />
+            <img src="img/a7_2.jpg" class="col-md-6 col-xs-12" />
+          </div>
+        </div>
+      </div>
+
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <div class="panel-title">
+            <h3>HDR Recovery</h3>
+          </div>
+        </div>
+        <div class="panel-body">
+          <h4>Dataset Generation</h4>
+          <p>
+            ...
+          </p>
+          <div class="img-compare">
+            <img src="img/gopro_response.svg" width="100%" />
+            <img src="img/a7r2_response.svg" width="100%" />
+          </div>
+
+          <hr>
+          <h4>Training</h4>
+          <p>
+            ...
+          </p>
+
+          <hr>
+          <h4>Results</h4>
+          <p>
+            ...
+          </p>
+        </div>
+      </div>
+
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <div class="panel-title">
+            <h3>Noise Reduction</h3>
+          </div>
+        </div>
+        <div class="panel-body">
+          <h4>Dataset Generation</h4>
+          <p>
+            ...
+          </p>
+
+          <hr>
+          <h4>Training</h4>
+          <p>
+            ...
+          </p>
+
+          <hr>
+          <h4>Results</h4>
+          <p>
+            ...
+          </p>
+        </div>
+      </div>
+
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <div class="panel-title">
+            <h3>Diffraction Blur Reduction</h3>
+          </div>
+        </div>
+        <div class="panel-body">
+          <h4>Dataset Generation</h4>
+          <p>
+            ...
+          </p>
+
+          <hr>
+          <h4>Training</h4>
+          <p>
+            ...
+          </p>
+
+          <hr>
+          <h4>Results</h4>
+          <p>
+            ...
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+    $(window).on('load', function() {
+        $(".img-compare").twentytwenty({default_offset_pct: 0.12});
+        $(".exif").sliphover({
+            backgroundColor: 'rgba(0,0,0,0)',
+            height: '50%'
+        });
+    });
+</script>
+</body>
+</html>
