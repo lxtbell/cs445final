@@ -345,17 +345,85 @@
             <img src="img/noise_orig.jpg" width="100%" />
             <img src="img/noise_gen.jpg" width="100%" />
           </div>
+
           <hr>
           <h4>Training</h4>
           <p>
-            ...
+            We obtained satisfactory results after 160 epochs of training.
           </p>
 
           <hr>
-          <h4>Results</h4>
+          <h4>Validation Set Results</h4>
           <p>
-            ...
+            The trained model successfully removes most of the noise,
+            while keeping resolution close to the target image,
+            unlike traditional blurring noise reduction methods.
           </p>
+          <div class="row">
+            <div class="col-md-6 col-xs-12">
+              <div class="img-compare input-output">
+                <img src="img/nr_results/90-inputs.png" width="100%" />
+                <img src="img/nr_results/90-outputs.png" width="100%" />
+              </div>
+            </div>
+            <div class="col-md-6 col-xs-12">
+              <div class="img-compare output-target">
+                <img src="img/nr_results/90-outputs.png" width="100%" />
+                <img src="img/nr_results/90-targets.png" width="100%" />
+              </div>
+            </div>
+          </div>
+
+          <br>
+          <br>
+          <div class="row">
+            <div class="col-md-6 col-xs-12">
+              <div class="img-compare input-output">
+                <img src="img/nr_results/108-inputs.png" width="100%" />
+                <img src="img/nr_results/108-outputs.png" width="100%" />
+              </div>
+            </div>
+            <div class="col-md-6 col-xs-12">
+              <div class="img-compare output-target">
+                <img src="img/nr_results/108-outputs.png" width="100%" />
+                <img src="img/nr_results/108-targets.png" width="100%" />
+              </div>
+            </div>
+          </div>
+
+          <br>
+          <br>
+          <div class="row">
+            <div class="col-md-6 col-xs-12">
+              <div class="img-compare input-output">
+                <img src="img/nr_results/132-inputs.png" width="100%" />
+                <img src="img/nr_results/132-outputs.png" width="100%" />
+              </div>
+            </div>
+            <div class="col-md-6 col-xs-12">
+              <div class="img-compare output-target">
+                <img src="img/nr_results/132-outputs.png" width="100%" />
+                <img src="img/nr_results/132-targets.png" width="100%" />
+              </div>
+            </div>
+          </div>
+
+          <br>
+          <br>
+          <div class="row">
+            <div class="col-md-6 col-xs-12">
+              <div class="img-compare input-output">
+                <img src="img/nr_results/156-inputs.png" width="100%" />
+                <img src="img/nr_results/156-outputs.png" width="100%" />
+              </div>
+            </div>
+            <div class="col-md-6 col-xs-12">
+              <div class="img-compare output-target">
+                <img src="img/nr_results/156-outputs.png" width="100%" />
+                <img src="img/nr_results/156-targets.png" width="100%" />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -374,11 +442,15 @@
           <hr>
           <h4>Training</h4>
           <p>
-            We obtain the most satisfactory results after 120 epochs of training.
+            We obtained optimal results after 120 epochs of training.
           </p>
 
           <hr>
           <h4>Validation Set Results</h4>
+          <p>
+            The output images still can't reach the detail level of the target images.
+            Nevertheless, it produces images with much higher clarity than the input images.
+          </p>
           <div class="row">
             <div class="col-md-6 col-xs-12">
               <div class="img-compare input-output">
@@ -399,14 +471,14 @@
           <div class="row">
             <div class="col-md-6 col-xs-12">
               <div class="img-compare input-output">
-                <img src="img/deblur_results/78-inputs.png" width="100%" />
-                <img src="img/deblur_results/78-outputs.png" width="100%" />
+                <img src="img/deblur_results/84-inputs.png" width="100%" />
+                <img src="img/deblur_results/84-outputs.png" width="100%" />
               </div>
             </div>
             <div class="col-md-6 col-xs-12">
               <div class="img-compare output-target">
-                <img src="img/deblur_results/78-outputs.png" width="100%" />
-                <img src="img/deblur_results/78-targets.png" width="100%" />
+                <img src="img/deblur_results/84-outputs.png" width="100%" />
+                <img src="img/deblur_results/84-targets.png" width="100%" />
               </div>
             </div>
           </div>
@@ -416,14 +488,31 @@
           <div class="row">
             <div class="col-md-6 col-xs-12">
               <div class="img-compare input-output">
-                <img src="img/deblur_results/84-inputs.png" width="100%" />
-                <img src="img/deblur_results/84-outputs.png" width="100%" />
+                <img src="img/deblur_results/42-inputs.png" width="100%" />
+                <img src="img/deblur_results/42-outputs.png" width="100%" />
               </div>
             </div>
             <div class="col-md-6 col-xs-12">
               <div class="img-compare output-target">
-                <img src="img/deblur_results/84-outputs.png" width="100%" />
-                <img src="img/deblur_results/84-targets.png" width="100%" />
+                <img src="img/deblur_results/42-outputs.png" width="100%" />
+                <img src="img/deblur_results/42-targets.png" width="100%" />
+              </div>
+            </div>
+          </div>
+
+          <br>
+          <br>
+          <div class="row">
+            <div class="col-md-6 col-xs-12">
+              <div class="img-compare input-output">
+                <img src="img/deblur_results/78-inputs.png" width="100%" />
+                <img src="img/deblur_results/78-outputs.png" width="100%" />
+              </div>
+            </div>
+            <div class="col-md-6 col-xs-12">
+              <div class="img-compare output-target">
+                <img src="img/deblur_results/78-outputs.png" width="100%" />
+                <img src="img/deblur_results/78-targets.png" width="100%" />
               </div>
             </div>
           </div>
