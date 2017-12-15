@@ -45,13 +45,13 @@
 			However, due to their limitation in physical size, mobile digital cameras often delivers inferior performance 
 			in image capturing compared to professional digital cameras that are larger in size. Compared to the high quality images captured by professional digital cameras, 
 			images captured by mobile digital cameras suffers from information loss. We believe that there three major causes to this:
-			(1) Limited dynamic range (2) Smaller sensors are more sensitive to electronic circuit noises (3) Diffusion blur from smaller aperture 
+			(1) Limited dynamic range (2) Smaller sensors are more sensitive to electronic circuit noises (3) diffraction blur from smaller aperture 
 			<br>
           </p>
 		  <p>
 			Here we provide two example images we captured under similar conditions using a full-frame mirrorless camera and a compact form-factor camera. 
 			We can see that the dynamic range of the first image is clearly higher than the second image. Also, sharpness of the first image from visual perception is higher than 
-			the second image. If we look a little closer, the light on the ceiling causes significant diffusion blur in the second image.
+			the second image. If we look a little closer, the light on the ceiling causes significant diffraction blur in the second image.
           </p>
           <div class="row exif">
             <img src="img/a7r2.jpg" class="col-xs-12" title="Camera: SONY ILCE-7RM2<br>Lens: Sony FE 12-24mm f4 G<br>Aperture: f/8<br>Shutter speed: 1/8 s<br>ISO: 100" />
@@ -436,7 +436,7 @@
         <div class="panel-body">
           <h4>Dataset Generation</h4>
           <p>
-            ...
+            To mimic the effect of a diffraction blur, we apply a gaussian filter with \( \sigma = 1\) to the original image. 
           </p>
 
           <hr>
